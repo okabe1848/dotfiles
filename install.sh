@@ -10,4 +10,4 @@ else
     git clone https://github.com/okabe1848/dotfiles "$INSTALL_DIR"
 fi
 
-# /bin/bash "$INSTALL_DIR/scripts/setup.bash"
+/bin/bash "$INSTALL_DIR/scripts/setup.bash"

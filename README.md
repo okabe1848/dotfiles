@@ -4,5 +4,5 @@ vscodeのDevContainerで利用する設定
 ## Installation
 
 ```shell
-$ curl -sL https://github.com/okabe1848/dotfiles/install.sh | sh
+$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/okabe1848/dotfiles/main/install.sh)"
 ```

@@ -4,4 +4,4 @@ set -eux
 source "$(dirname "$0")/common.bash"
 
 /bin/bash "$CUR_DIR/setup-links.bash"
-/bin/bash "$CUR_DIR/change-schell.zsh"
+# /bin/bash "$CUR_DIR/change-schell.zsh"
