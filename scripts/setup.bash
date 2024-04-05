@@ -3,5 +3,7 @@ set -eux
 # shellcheck source=./scripts/common.bash
 source "$(dirname "$0")/common.bash"
 
+echo "setup.bash is executing..."
+
 /bin/bash "$CUR_DIR/setup-links.bash"
 # /bin/bash "$CUR_DIR/change-schell.zsh"
