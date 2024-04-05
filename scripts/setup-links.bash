@@ -16,9 +16,6 @@ if [ -e $HOME/.zshrc ]; then
     mv $HOME/.zshrc $HOME/.zshrc_old-$(date "+%FT%T")
 fi
 
-# ln -sfv "$REPO_DIR/config/"* "$XDG_CONFIG_HOME"
-# ln -sfv "$XDG_CONFIG_HOME/zsh/.zshenv" "$HOME/.zshenv"
-# ln -sfv "$XDG_CONFIG_HOME/zsh/.zshrc" "$HOME/.zshrc"
-
-echo "REPO_DIR=$REPO_DIR"
-echo "XDG_CONFIG_HOME=$XDG_CONFIG_HOME"
+ln -sfv "$REPO_DIR/config/"* "$XDG_CONFIG_HOME"
+ln -sfv "$XDG_CONFIG_HOME/zsh/.zshenv" "$HOME/.zshenv"
+ln -sfv "$XDG_CONFIG_HOME/zsh/.zshrc" "$HOME/.zshrc"
