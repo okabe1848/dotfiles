@@ -44,13 +44,13 @@ zinit light sindresorhus/pure
 
 
 # ripgrrep
-if [ "$(uname -i)" = "aarch64" ]; then
-  zinit ice from"gh-r" as"program" bpick"*aarch64-unknown-linux-gnu*" pick"rg"
-  zinit light microsoft/ripgrep-prebuilt
-elif [ "$OSTYPE" =~ "darwin" ]; then
-  zinit ice from"gh-r" as"program" bpick"*apple-darwin*" pick"rg"
-  zinit light microsoft/ripgrep-prebuilt
-fi
+# if [ "$(uname -i)" = "aarch64" ]; then
+#   zinit ice from"gh-r" as"program" bpick"*aarch64-unknown-linux-gnu*" pick"rg"
+#   zinit light microsoft/ripgrep-prebuilt
+# elif [ "$OSTYPE" =~ "darwin" ]; then
+#   zinit ice from"gh-r" as"program" bpick"*apple-darwin*" pick"rg"
+#   zinit light microsoft/ripgrep-prebuilt
+# fi
 
 # ---------------------------------------------- #
 #   Update zinit
