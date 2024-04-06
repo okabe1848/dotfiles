@@ -1,13 +1,4 @@
 
-alias lt='ls -tUGnAFoh'
-alias ll='ls -lUGnAFoh'
-alias gs='git status'
-alias gd='git diff'
-alias gb='git branch'
-alias gc='git checkout'
-alias gr='git restore --staged'
-alias dc='docker-compose'
-alias mc='mutagen-compose'
 
 # ---------------------------------------------- #
 #                  Install zinit                 #
@@ -25,7 +16,40 @@ source "${HOME}/.zinit/bin/zinit.zsh"
 
 
 # ---------------------------------------------- #
-#   Plugin zsh-syntax-highlighting
+#   Plugins
 # ---------------------------------------------- #
 zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit light paulirish/git-open
 
+
+# ---------------------------------------------- #
+#   Zsh options
+# ---------------------------------------------- #
+## 他のzshと履歴を共有
+setopt inc_append_history
+setopt share_history
+
+## パスを直接入力してもcdする
+setopt AUTO_CD
+
+# remove trailing spaces after completion if needed
+setopt auto_param_keys
+
+# cd コマンドなしでディレクトリ移動
+setopt AUTO_CD
+cdpath=(.. ~ ~/Development)
+
+# ---------------------------------------------- #
+#   Aliases
+# ---------------------------------------------- #
+alias lt='ls -tUGnAFoh'
+alias ll='ls -lUGnAFoh'
+alias gs='git status'
+alias gd='git diff'
+alias gb='git branch'
+alias gc='git checkout'
+alias gr='git restore --staged'
+alias dc='docker-compose'
+alias mc='mutagen-compose'
