@@ -69,7 +69,7 @@ cdpath=(.. ~ ~/Development)
 #   Aliases
 # ---------------------------------------------- #
 alias lt='ls -tUGnAFoh'
-alias ll='ls -lUGnAFoh'
+alias ll='ls -lvGnAFoh'
 alias gs='git status'
 alias gd='git diff'
 alias gb='git branch'
