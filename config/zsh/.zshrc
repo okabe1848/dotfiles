@@ -15,7 +15,8 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light paulirish/git-open
 
-# -------- bat --------
+# bat
+# 使い方: https://qiita.com/t_o_d/items/d3799294a6a935f78f8f
 zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
 
@@ -24,6 +25,9 @@ if builtin command -v bat > /dev/null; then
   alias cat="bat"
 fi
 
+# Load powerlevel10k theme
+zinit ice depth"1" # git clone depth
+zinit light romkatv/powerlevel10k
 
 
 
