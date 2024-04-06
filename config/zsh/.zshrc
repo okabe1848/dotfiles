@@ -42,6 +42,16 @@ zinit light romkatv/powerlevel10k
 zinit ice pick"async.zsh" src"pure.zsh"
 zinit light sindresorhus/pure
 
+
+# ripgrrep
+if [ "$(uname -i)" = "aarch64" ]; then
+  zinit ice from"gh-r" as"program" bpick"*aarch64-unknown-linux-gnu*" pick"rg"
+  zinit light microsoft/ripgrep-prebuilt
+elif [ "$OSTYPE" =~ "darwin" ]; then
+  zinit ice from"gh-r" as"program" bpick"*apple-darwin*" pick"rg"
+  zinit light microsoft/ripgrep-prebuilt
+fi
+
 # ---------------------------------------------- #
 #   Update zinit
 # ---------------------------------------------- #
@@ -113,7 +123,7 @@ function find_cd() {
   fi
 }
 zle -N find_cd
-bindkey '^x' find_cd
+bindkey '^X' find_cd
 
 # ---------------------------------------------- #
 #   Aliases
