@@ -51,6 +51,10 @@ zinit update --parallel
 # ---------------------------------------------- #
 #   Zsh options
 # ---------------------------------------------- #
+HISTFILE=$HOME/.zsh-history
+HISTSIZE=100000
+SAVEHIST=1000000
+
 ## 他のzshと履歴を共有
 setopt inc_append_history
 setopt share_history
@@ -64,6 +68,51 @@ setopt auto_param_keys
 # cd コマンドなしでディレクトリ移動
 setopt AUTO_CD
 cdpath=(.. ~ ~/Development)
+
+
+# --------------------- #
+#  　peco settings
+# --------------------- #
+# 過去に実行したコマンドを選択。ctrl-rにバインド
+function peco-select-history() {
+  BUFFER=$(\history -n -r 1 | peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+
+# search a destination from cdr list
+function peco-get-destination-from-cdr() {
+  cdr -l | \
+  sed -e 's/^[[:digit:]]*[[:blank:]]*//' | \
+  peco --query "$LBUFFER"
+}
+
+### 過去に移動したことのあるディレクトリを選択。ctrl-uにバインド
+function peco-cdr() {
+  local destination="$(peco-get-destination-from-cdr)"
+  if [ -n "$destination" ]; then
+    BUFFER="cd $destination"
+    zle accept-line
+  else
+    zle reset-prompt
+  fi
+}
+zle -N peco-cdr
+bindkey '^u' peco-cdr
+
+
+## カレントディレクトリ以下のディレクトリ検索・移動
+function find_cd() {
+  local selected_dir=$(find . -type d | peco)
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+}
+zle -N find_cd
+bindkey '^x' find_cd
 
 # ---------------------------------------------- #
 #   Aliases
