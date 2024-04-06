@@ -12,10 +12,6 @@ mkdir -p \
     "$XDG_CONFIG_HOME" \
     "$XDG_STATE_HOME"
 
-if [ -e $HOME/.zshrc ]; then
-    mv $HOME/.zshrc $HOME/.zshrc_old-$(date "+%FT%T")
-fi
-
 ln -sfv "$REPO_DIR/config/"* "$XDG_CONFIG_HOME"
 ln -sfv "$XDG_CONFIG_HOME/zsh/.zshenv" "$HOME/.zshenv"
 ln -sfv "$XDG_CONFIG_HOME/zsh/.zshrc" "$HOME/.zshrc"
