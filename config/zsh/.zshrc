@@ -29,7 +29,7 @@ fi
 # Load powerlevel10k theme
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
-# source "${ZINIT_HOME}/.p10k.zsh"
+source "$XDG_CONFIG_HOME/zsh/.p10k.zsh"
 
 # ---------------------------------------------- #
 #   Update zinit
