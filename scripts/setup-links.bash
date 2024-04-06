@@ -15,4 +15,4 @@ mkdir -p \
 ln -sfv "$REPO_DIR/config/"* "$XDG_CONFIG_HOME"
 ln -sfv "$XDG_CONFIG_HOME/zsh/.zshenv" "$HOME/.zshenv"
 ln -sfv "$XDG_CONFIG_HOME/zsh/.zshrc" "$HOME/.zshrc"
-# ln -sfv "$XDG_CONFIG_HOME/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
+ln -sfv "$XDG_CONFIG_HOME/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
