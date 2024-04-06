@@ -5,7 +5,8 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
-
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
 # ---------------------------------------------- #
 #   Plugins
@@ -28,8 +29,13 @@ fi
 # Load powerlevel10k theme
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
+# source "${ZINIT_HOME}/.p10k.zsh"
 
-
+# ---------------------------------------------- #
+#   Update zinit
+# ---------------------------------------------- #
+zinit self-update
+zinit update --parallel
 
 # ---------------------------------------------- #
 #   Zsh options
