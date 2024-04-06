@@ -29,7 +29,7 @@ fi
 # Load powerlevel10k theme
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
-source "$XDG_CONFIG_HOME/zsh/.p10k.zsh"
+# source "$XDG_CONFIG_HOME/zsh/.p10k.zsh"
 
 # Load the pure theme, with zsh-async library that's bundled with it.
 zinit ice pick"async.zsh" src"pure.zsh"
